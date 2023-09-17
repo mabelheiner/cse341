@@ -2,11 +2,16 @@ const mabelRoute = (req, res) => (
     res.send('Mabel Heiner')
 );
 
-const johnRoute = (req, res) => (
-    res.send('John Doe')
+const jasonRoute = (req, res) => (
+    res.send('Jason Heiner')
 );
+
+const margoRoute = (req, res) => {
+    res.send('Margo Heiner')
+}
 
 module.exports = {
     mabelRoute,
-    johnRoute
+    jasonRoute,
+    margoRoute
 };
