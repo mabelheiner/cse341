@@ -2,7 +2,6 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
-  console.log('get all called');
   const result = await mongodb.getDb().db('cse341').collection('contacts').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -11,7 +10,6 @@ const getAll = async (req, res, next) => {
 };
 
 const getSingle = async (req, res, next) => {
-  console.log('get Single called');
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDb()
