@@ -8,6 +8,25 @@ GET http://localhost:8080/contacts/650d15665a1dd409fb78a721
 ###
 GET http://localhost:8080/contacts/650d15d25a1dd409fb78a722
 
+### POST CONTACT
+POST http://localhost:8080/contacts HTTP/1.1 
+content-type: application/json
+
+{
+"firstName":"Judy", "lastName":"Heiner", "email":"judyheiner@gmail.com", "favoriteColor":"Yellow", "birthday":"December 8"
+}
+
+### PUT CONTACT
+PUT http://localhost:8080/contacts/6518efc779fa055e39e5c344 HTTP/1.1 
+content-type: application/json
+
+{
+"firstName":"Judy", "lastName":"Wegner", "email":"judywegner@gmail.com", "favoriteColor":"Yellow", "birthday":"December 8"
+}
+
+### DELETE CONTACT
+DELETE http://localhost:8080/contacts/6518efc779fa055e39e5c344 HTTP/1.1
+
 // PRODUCTION Deploy
 ###
 GET https://cse341-072u.onrender.com/contacts
