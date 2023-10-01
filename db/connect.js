@@ -1,4 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
+require('dotenv').config();
 
 async function getCluster(client) {
     const db = client.db('cse341');
@@ -17,7 +18,7 @@ async function listDatabases(client) {
 let _db;
 
 const initDb = (callback) => {
-    const URI = "mongodb+srv://mabelheiner:Shootingstars5@cluster0.r4qt5qs.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp"
+    //const URI = "mongodb+srv://mabelheiner:Shootingstars5@cluster0.r4qt5qs.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp"
     //const clusterURI = process.env.CLUSTER_URI;
     //const client = new MongoClient(clusterURI);
 
@@ -26,7 +27,7 @@ const initDb = (callback) => {
         return callback(null, _db);
     }
 
-    MongoClient.connect('mongodb+srv://mabelheiner:Shootingstars5@cluster0.r4qt5qs.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp')
+    MongoClient.connect(process.env.MONGODB_DATABASE_URI)
     .then((client) => {
         _db = client;
         callback(null, _db);
