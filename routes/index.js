@@ -1,8 +1,7 @@
-const routes = require('express').Router();
-const lesson1Controller = require('../controllers/lesson1');
+const express = require('express');
+const router = express.Router();
 
-routes.get('/', lesson1Controller.mabelRoute);
-routes.get('/jason', lesson1Controller.jasonRoute);
-routes.get('/margo', lesson1Controller.margoRoute);
+router.use('/', require('./swagger'));
+router.use('/contacts', require('./contacts'));
 
-module.exports = routes;
+module.exports = router;
